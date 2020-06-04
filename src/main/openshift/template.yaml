@@ -138,9 +138,7 @@ objects:
       name: ${APP_NAME}
     spec:
       selector:
-        name: ${APP_NAME}
         app: ${APP_NAME}
-      host: ${ROUTE_DNS}
       port:
         targetPort: 8080-tcp
       to:
@@ -154,7 +152,6 @@ objects:
       name: ${APP_NAME}
     spec:
       selector:
-        name: ${APP_NAME}
         app: ${APP_NAME}
         deploymentconfig: ${APP_NAME}
       ports:
@@ -203,6 +200,7 @@ objects:
     spec:
       replicas: 2
       selector:
+        app: ${APP_NAME}
         deploymentconfig: ${APP_NAME}
       strategy:
         type: Rolling
@@ -210,6 +208,7 @@ objects:
         metadata:
           name: ${APP_NAME}
           labels:
+            app: ${APP_NAME}
             deploymentconfig: ${APP_NAME}
         spec:
           containers:
@@ -302,8 +301,3 @@ parameters:
     name: APP_NAME
     required: true
     value: ocdemo
-  - description: The DNS to use for the route
-    displayName: Cluster URL address
-    name: ROUTE_DNS
-    required: true
-    value: www.example.com
