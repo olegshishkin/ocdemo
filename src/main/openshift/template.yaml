@@ -171,7 +171,7 @@ objects:
         sourceStrategy:
           from:
             kind: ImageStreamTag
-            name: wildfly:latest
+            name: openjdk18-openshift:latest
             namespace: openshift
       source:
         type: Git
