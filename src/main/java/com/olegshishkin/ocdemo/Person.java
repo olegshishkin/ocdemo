@@ -1,6 +1,5 @@
 package com.olegshishkin.ocdemo;
 
-import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +15,6 @@ import javax.persistence.Id;
 
 @Setter
 @Getter
-@Builder
 @NoArgsConstructor
 @EqualsAndHashCode(of = {"name"})
 @ToString
